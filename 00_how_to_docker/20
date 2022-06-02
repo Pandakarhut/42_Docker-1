@@ -1,0 +1,13 @@
+# 20. Create an overlay-type internal network that you will name overmind.
+
+# Run the following command on the manager node (virtualbox)
+
+docker network create -d overlay overmind
+
+# The output will be the ID of the network. You can list networks with:
+
+docker network ls
+
+# -d means driver. So we use 'overlay' driver and name it overmind. This overlay network will be used by the two swarm nodes' services
+
+# to be connected to each other.

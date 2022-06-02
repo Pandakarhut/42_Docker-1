@@ -1,0 +1,12 @@
+# Mac can't be the manager because virtualbox won't be able to connect to it.
+# Virtualbox will be the manager and Mac will then connect to it as a slave.
+# Run #17 after running this.
+
+# 1. Log in as root on the virtual machine
+sudo -i
+
+# 2. Start new docker swarm with virtual machine as the manager. First leave any existing swarm: docker swarm leave --force
+docker swarm init --advertise-addr $(ifconfig enp0s8 | grep 'inet ' | awk '{print $2}')
+
+# 3. Copy the token string after '--token' and the IP address and port at the end of the output.
+#    Move on to #17 to join Mac to the swarm as a slave.

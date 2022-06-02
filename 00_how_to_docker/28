@@ -1,0 +1,6 @@
+docker service rm $(docker service ls -q)
+
+# this command don t have force option but its
+# quiting and removing all the services from the swarm
+
+# docker swarm leave -f

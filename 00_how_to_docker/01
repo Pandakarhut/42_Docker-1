@@ -1,0 +1,21 @@
+# Before starting, remove all containers and leave all swarm nodes.
+# docker stop $(docker ps -q)
+# docker rm -f $(docker ps -a -q)
+# docker swarm leave --force
+
+docker pull hello-world
+# Uses Docker software, to pull the `hello-world`
+# image from Docker Hub. (public container registry)
+
+
+# Image:
+# FROM: debian:11.1
+# apt-get update && apt-get install slowloris
+# mkdir ~/newfolder
+# CD [slowloris 192.168.1.2]
+
+# docker build -t jing-slowloris .
+
+# Image file.
+
+# docker run jing-slowloris

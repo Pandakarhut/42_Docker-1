@@ -1,0 +1,6 @@
+docker service scale -d marines=20
+
+# Looking at the logs of marines:
+# docker service logs marines
+
+# docker service update --replicas=20 marines

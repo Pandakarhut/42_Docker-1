@@ -1,0 +1,7 @@
+# 22. List all the services of the local swarm
+
+docker service ls
+
+# To see which node the new service containers are running on (either slave (virtualbox) or docker-desktop (mac)), we can run:
+
+docker service ps orbital-command

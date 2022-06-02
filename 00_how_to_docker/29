@@ -1,0 +1,5 @@
+docker rm -f $(docker ps -a -q)
+
+# https://coderwall.com/p/ewk0mq/stop-remove-all-docker-containers
+
+# docker ps -a: all containers -q: quiet only display container IDs
