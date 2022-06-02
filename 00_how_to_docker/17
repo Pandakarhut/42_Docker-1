@@ -3,6 +3,9 @@
 # Move on to #18 now, and return back here after #19.
 
 # 1. Join the docker swarm on Mac terminal. Use the token and ip address from the virtual machine docker swarm init output.
+docker swarm init --advertise-addr 192.168.56.2
+
+# 2. Join the swarm, but it change each time:
 docker swarm join --token SWMTKN-1-595k9lsu8hhfuymfeqr1mvu3wah5j9tisn14377ka9doacc66q-dokvep8c1h2ei169lt3v6jkwh 192.168.56.2:2377 --advertise-addr 192.168.56.1
 
 # Now there is a docker swarm with two machines: VirtualBox (manager) and Mac (worker). Move on to #20

@@ -10,7 +10,7 @@
 
 # Run on the manager node:
 
-docker service create -d --name orbital-command --network overmind -e RABBITMQ_DEFAULT_USER=root -e RABBITMQ_DEFAULT_PASS=bunny rabbitmq
+docker service create -d --name orbital-command --network=overmind -e RABBITMQ_DEFAULT_USER=jtian -e RABBITMQ_DEFAULT_PASS=1 rabbitmq
 
 # A docker service can run multiple instances of an image on multiple nodes at the same time.
 

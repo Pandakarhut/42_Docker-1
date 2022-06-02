@@ -1,9 +1,10 @@
 docker run -it --rm debian
-# Then in container run: apt update -y && apt upgrade -y && apt install git gcc nano -y
+# Then in container run:
+apt update -y && apt upgrade -y && apt install git gcc nano -y
 
 # Example C file (create file.c):
 
-# include <stdio.h>
+# #include <stdio.h>
 # int main()
 # {
 #   printf("testing c\n");

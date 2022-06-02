@@ -1,12 +1,7 @@
-# Mac can't be the manager because virtualbox won't be able to connect to it.
-# Virtualbox will be the manager and Mac will then connect to it as a slave.
-# Run #17 after running this.
-
-# 1. Log in as root on the virtual machine
-sudo -i
-
-# 2. Start new docker swarm with virtual machine as the manager. First leave any existing swarm: docker swarm leave --force
-docker swarm init --advertise-addr $(ifconfig enp0s8 | grep 'inet ' | awk '{print $2}')
-
-# 3. Copy the token string after '--token' and the IP address and port at the end of the output.
-#    Move on to #17 to join Mac to the swarm as a slave.
+# port 2377 cannot work on Mac, the VM will be the manager, the Mac be the slave
+# 1. make sure the slave wasn't in any node. In the VM(manager), run:
+docker swarm leave -f
+# 2. get the token:
+sudo docker swarm join-token worker
+# 3. copt paste the token, run it in the Mac(slave), will change each time:
+docker swarm join --token SWMTKN-1-0apo3j9owj4nf2aur5nn2p3nvf25042klghnfy43s2kvn2qdh8-896m1zzk4xty1x81w328khodt 192.168.56.2:2377
